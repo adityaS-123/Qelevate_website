@@ -1,0 +1,149 @@
+import { Link } from 'react-router-dom';
+import { ArrowRight, CheckCircle, Heart, Stethoscope, Globe } from 'lucide-react';
+
+export default function QHealth() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      {/* Hero Section */}
+      <section className="relative min-h-[600px] flex items-center overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10 opacity-50"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl"></div>
+        
+        <div className="container-lg relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+                QHEALTH
+              </span>
+            </h1>
+            <h2 className="text-2xl md:text-4xl font-light text-gray-300 mb-8">
+              Trusted Medical Advice for Global Citizens
+            </h2>
+            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+              Expert second opinions and personalized medical guidance from globally qualified physicians, available wherever you are.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300 transform hover:scale-105"
+            >
+              Request Medical Consultation <ArrowRight size={20} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do */}
+      <section className="py-20 bg-slate-900/50 backdrop-blur-sm border-y border-cyan-500/10">
+        <div className="container-lg">
+          <h2 className="text-4xl font-bold text-white mb-4">What QHealth Offers</h2>
+          <p className="text-cyan-400 text-lg mb-12">Confidential, evidence-based second opinions from board-certified physicians worldwide</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { icon: Stethoscope, title: 'Expert Second Opinions', desc: 'Across all major specialties from qualified international physicians' },
+              { icon: Globe, title: 'Global Expertise', desc: 'Access physicians from the U.S., U.K., and India with diverse specialties' },
+              { icon: Heart, title: 'Long-Gravity Focus', desc: 'Emphasis on preventive and personalized medicine advice' },
+              { icon: CheckCircle, title: 'Board-Certified Team', desc: 'All consultants verified and certified in their respective fields' },
+            ].map((item, idx) => (
+              <div key={idx} className="group">
+                <div className="flex gap-4 p-6 rounded-lg bg-gradient-to-br from-cyan-500/5 to-blue-500/5 border border-cyan-500/20 hover:border-cyan-500/50 transition duration-300 transform hover:scale-105">
+                  <item.icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-gray-400">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Detail */}
+      <section className="py-20">
+        <div className="container-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h3 className="text-3xl font-bold text-white mb-6">For Complex Diagnoses</h3>
+              <p className="text-gray-400 mb-6">Whether you're navigating a complex diagnosis, weighing treatment options, or simply seeking peace of mind, QHealth connects you with the clarity you need to make confident healthcare decisions.</p>
+              <ul className="space-y-4">
+                {['Expert analysis of your medical history', 'Personalized treatment recommendations', 'Clarification of complex medical terms'].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-gray-300">
+                    <CheckCircle size={20} className="text-cyan-400 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="h-64 md:h-96 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-lg border border-cyan-500/30 flex items-center justify-center">
+              <Heart className="w-24 h-24 text-cyan-400/30" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="h-64 md:h-96 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg border border-purple-500/30 flex items-center justify-center order-2 md:order-1">
+              <Stethoscope className="w-24 h-24 text-purple-400/30" />
+            </div>
+            <div className="order-1 md:order-2">
+              <h3 className="text-3xl font-bold text-white mb-6">Physician and Healthcare Worker Coaching</h3>
+              <p className="text-gray-400 mb-6">Our coaching transforms physicians into high-performing teams. With guided support in customizing career growth and enhancing skills, we help colleagues thrive and succeed.</p>
+              <ul className="space-y-4">
+                {['Career guidance and mentoring', 'Skill enhancement programs', 'Professional development support'].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-gray-300">
+                    <CheckCircle size={20} className="text-purple-400 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
+      <section className="py-20 bg-gradient-to-b from-slate-900/50 to-slate-950">
+        <div className="container-lg">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">Who We Serve</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: 'Individuals & Families', desc: 'Seeking expert medical guidance and second opinions for better health decisions' },
+              { title: 'Executives & Expatriates', desc: 'International professionals needing global-standard healthcare advice' },
+              { title: 'Healthcare Professionals', desc: 'Seeking peer support and professional development opportunities' },
+            ].map((item, idx) => (
+              <div key={idx} className="p-8 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/30 hover:border-blue-500/60 transition duration-300">
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-gray-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-purple-500/10"></div>
+        <div className="container-lg relative z-10 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready for Expert Medical Guidance?</h2>
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">Connect with board-certified physicians for confidential, expert second opinions</p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition duration-300 transform hover:scale-105"
+          >
+            Get Your Consultation <ArrowRight size={20} />
+          </a>
+        </div>
+      </section>
+
+      {/* Navigation */}
+      <section className="py-8 text-center border-t border-cyan-500/10">
+        <Link to="/" className="text-cyan-400 hover:text-cyan-300 font-semibold flex items-center justify-center gap-2 transition">
+          ← Back to Home
+        </Link>
+      </section>
+    </div>
+  );
+}
