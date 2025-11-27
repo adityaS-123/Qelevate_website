@@ -158,28 +158,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="py-20">
-        <div className="container-lg">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Impact</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { number: '500+', label: 'Professionals Served' },
-              { number: '50+', label: 'Healthcare Organizations' },
-              { number: '15+', label: 'Countries Globally' },
-              { number: '1000+', label: 'Patient Lives Improved' },
-            ].map((stat, idx) => (
-              <div key={idx} className="text-center p-8 rounded-lg bg-linear-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20">
-                <div className="text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-pink-400 to-purple-400 mb-2">
-                  {stat.number}
-                </div>
-                <p className="text-gray-400">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-r from-pink-500/10 via-transparent to-purple-500/10"></div>
