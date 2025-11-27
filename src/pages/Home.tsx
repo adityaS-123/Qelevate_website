@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Microscope, Users, Zap, Rocket, Brain, Target } from 'lucide-react';
+import { ArrowRight, Heart, Microscope, Zap, Rocket } from 'lucide-react';
 
 export default function Home() {
   return (
