@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Moon, Brain, Heart, Clock, Zap } from 'lucide-react';
+import { CheckCircle, Moon, Brain, Heart, Clock, Zap } from 'lucide-react';
 import QSleepContactForm from '../components/QSleepContactForm';
 
 export default function QSleep() {

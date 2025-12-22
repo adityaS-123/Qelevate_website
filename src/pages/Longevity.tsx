@@ -1,47 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Heart, Leaf, Activity, Brain } from 'lucide-react';
-import { useState } from 'react';
 
 export default function Longevity() {
-  const [expandedPackage, setExpandedPackage] = useState(0);
-
-  const packages = [
-    {
-      name: 'Essential Wellness Concierge',
-      subtitle: 'For individuals & families beginning their longevity journey',
-      features: [
-        'Initial wellness assessment with personalized recommendations',
-        'Quarterly consultations for health optimization',
-        'Digital longevity checkup and AI tracking',
-        'Access to resource library and wellness guides',
-      ],
-    },
-    {
-      name: 'Platinum Longevity Package',
-      subtitle: 'For executives and families seeking premium wellness',
-      features: [
-        'COMPREHENSIVE Longevity & Risk Assessment',
-        'Biometric screening & advanced health readings',
-        'Quarterly physician consultations',
-        '24/7 wellness navigation support',
-        'Customized supplement and nutrition protocols',
-        'Advanced lab testing and biomarker tracking',
-        'Digital coaching and lifestyle optimization AI tools',
-      ],
-    },
-    {
-      name: 'Executive Preventive Program',
-      subtitle: 'For busy professionals seeking structured preventive care',
-      features: [
-        'Initial Executive Health Consultation',
-        'Bi-annual check-ups with concierge service',
-        'Stress & sleep optimization programs',
-        'Executive fitness and nutrition plans',
-        'On-call physician availability',
-        'Priority scheduling and virtual consultations',
-      ],
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
