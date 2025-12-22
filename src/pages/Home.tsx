@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Microscope, Zap, Rocket } from 'lucide-react';
+import { ArrowRight, Heart, Zap, Rocket } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -30,16 +29,14 @@ export default function Home() {
                 <span className="gradient-text">Excellence</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-                Transform your healthcare delivery with expert consultancy, cutting-edge research, and patient-centered solutions that make a real difference.
+                The innovation prescription to the global healthcare needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/contact"
                   className="btn-primary flex items-center justify-center gap-2"
                 >
-                  Start Your Free Consultation <Rocket size={20} />
+                  Contact Us <Rocket size={20} />
                 </a>
                 <button className="btn-secondary flex items-center justify-center gap-2">
                  
@@ -98,32 +95,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Service Card 1 */}
-            <Link to="/healthcare-professional-consultancy">
-              <div className="group relative h-full fade-in-up" style={{animationDelay: '0.1s'}}>
-                <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                <div className="relative glass rounded-2xl p-8 h-full flex flex-col hover:border-blue-500/50 border-gray-700/50 transition-all duration-300 cursor-pointer overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl transform translate-x-16 -translate-y-8 group-hover:translate-x-8 group-hover:translate-y-0 transition-transform duration-500"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="w-14 h-14 bg-linear-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
-                      <Microscope size={28} className="text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3 text-gray-100 group-hover:text-blue-400 transition-colors">
-                      Healthcare Professional Consultancy
-                    </h3>
-                    <p className="text-gray-400 mb-6 leading-relaxed">
-                      Expert consultancy for healthcare professionals, focusing on improving patient outcomes and operational efficiency.
-                    </p>
-                    <div className="flex items-center text-blue-400 font-semibold group-hover:text-blue-300 transition-colors">
-                      Learn More <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {/* Service Card 2 */}
             <div className="group relative h-full fade-in-up" style={{animationDelay: '0.2s'}}>
               <div className="absolute inset-0 bg-linear-to-r from-teal-600/20 to-green-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -141,9 +113,7 @@ export default function Home() {
                     Direct health coaching and support for patients, providing personalized guidance for better health management.
                   </p>
                   <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="flex items-center text-teal-400 font-semibold group-hover:text-teal-300 transition-colors"
                   >
                     Get Started <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
@@ -169,9 +139,7 @@ export default function Home() {
                     Healthcare research and innovation to drive meaningful improvements in the industry and patient care standards.
                   </p>
                   <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/contact"
                     className="flex items-center text-pink-400 font-semibold group-hover:text-pink-300 transition-colors"
                   >
                     Explore <ArrowRight size={18} className="ml-2 transform group-hover:translate-x-1 transition-transform" />
@@ -202,13 +170,11 @@ export default function Home() {
             Join with QElevate and experience the difference expert consultancy and innovation can make in your healthcare organization.
           </p>
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact"
             className="btn-primary inline-flex items-center gap-2 text-lg px-10 py-4"
           >
             <Zap size={22} />
-            Request an Introductory Call
+            Contact Us
           </a>
         </div>
       </section>

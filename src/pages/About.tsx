@@ -5,47 +5,30 @@ export default function About() {
   const teamMembers = [
     {
       name: 'Rohit Sharma, MD M.Sc',
-      title: 'Founder',
       qualifications: [
         'Internal Medicine & Health Informatics',
         'Educator and Mentor',
         'American Board Certified in Internal Medicine',
       ],
       image: '/rohit_about.jpg',
+      linkedin: 'https://www.linkedin.com/in/rohit8692/',
+      email: 'contactus@qelevate.org',
     },
     {
       name: 'Jeffery Shuhaibier, MD MBA',
-      title: 'Founder',
       qualifications: [
         'Surgery, Healthcare, Legal & Entities',
         'Educator and Mentor',
         'American Board Certified in Cardiothoracic Surgery',
       ],
       image: '/jeffery_about.jpg',
+      linkedin: 'https://www.linkedin.com/in/jeffrey-shuhaiber-48877451/',
+      email: 'contactus@qelevate.org',
     },
   ];
 
   return (
     <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-linear-to-br from-pink-500/10 via-transparent to-purple-500/10 opacity-50"></div>
-        <div className="absolute top-0 left-0 w-96 h-96 bg-linear-to-br from-pink-500/20 to-transparent rounded-full blur-3xl"></div>
-        
-        <div className="container-lg relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-pink-400 via-purple-400 to-violet-400">
-                ABOUT QELEVATE
-              </span>
-            </h1>
-            <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-              Empowering healthcare and wellness for individuals, organizations, and families globally.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
       <section className="py-20">
         <div className="container-lg">
@@ -59,7 +42,7 @@ export default function About() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
                 {teamMembers.map((member, idx) => (
                   <div key={idx} className="group text-center flex flex-col h-full">
-                    <div className="mb-8 overflow-hidden rounded-xl h-80 md:h-96 bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/30 flex items-center justify-center transform transition hover:scale-105 duration-300">
+                    <div className="mb-8 overflow-hidden rounded-xl h-80 md:h-96 bg-linear-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/30 flex items-center justify-center transform transition hover:scale-105 duration-300">
                       <img 
                         src={member.image} 
                         alt={member.name}
@@ -67,8 +50,8 @@ export default function About() {
                       />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-pink-400 font-semibold mb-4">{member.title}</p>
-                    <ul className="space-y-2 mb-6 flex-grow">
+                   
+                    <ul className="space-y-2 mb-6 grow">
                       {member.qualifications.map((qual, qIdx) => (
                         <li key={qIdx} className="text-gray-400 text-sm">
                           {qual}
@@ -76,10 +59,10 @@ export default function About() {
                       ))}
                     </ul>
                     <div className="flex justify-center gap-4 pt-4">
-                      <a href="#" className="p-3 rounded-lg bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/60 transition text-pink-400 hover:text-pink-300">
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/60 transition text-pink-400 hover:text-pink-300">
                         <Linkedin size={20} />
                       </a>
-                      <a href="#" className="p-3 rounded-lg bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/60 transition text-pink-400 hover:text-pink-300">
+                      <a href={`mailto:${member.email}`} className="p-3 rounded-lg bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/60 transition text-pink-400 hover:text-pink-300">
                         <Mail size={20} />
                       </a>
                     </div>
@@ -118,61 +101,18 @@ export default function About() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 bg-slate-900/50">
-        <div className="container-lg">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Excellence',
-                desc: 'Delivering the highest standards in healthcare consultation and services',
-              },
-              {
-                title: 'Compassion',
-                desc: 'Putting patients, professionals, and organizations at the center of our work',
-              },
-              {
-                title: 'Innovation',
-                desc: 'Constantly evolving and adopting cutting-edge approaches in healthcare',
-              },
-              {
-                title: 'Integrity',
-                desc: 'Operating with transparency and ethical standards in all endeavors',
-              },
-              {
-                title: 'Collaboration',
-                desc: 'Building partnerships to create sustainable impact globally',
-              },
-              {
-                title: 'Empowerment',
-                desc: 'Enabling individuals and organizations to reach their full potential',
-              },
-            ].map((value, idx) => (
-              <div key={idx} className="p-8 rounded-lg bg-linear-to-br from-pink-500/5 to-purple-500/5 border border-pink-500/20 hover:border-pink-500/50 transition duration-300 transform hover:scale-105">
-                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
-                <p className="text-gray-400">{value.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-r from-pink-500/10 via-transparent to-purple-500/10"></div>
         <div className="container-lg relative z-10 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Join Our Community</h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Be part of a global movement transforming healthcare and professional development
-          </p>
+          
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition duration-300 transform hover:scale-105"
           >
-            Get In Touch <ArrowRight size={20} />
+            Contact Us <ArrowRight size={20} />
           </a>
         </div>
       </section>

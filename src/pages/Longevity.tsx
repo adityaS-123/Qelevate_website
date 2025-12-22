@@ -76,13 +76,13 @@ export default function Longevity() {
       <section className="py-20 bg-slate-900/50 backdrop-blur-sm border-y border-emerald-500/10">
         <div className="container-lg">
           <h2 className="text-4xl font-bold text-white mb-4">Why Choose QElevate?</h2>
-          <p className="text-emerald-400 text-lg mb-12">Exclusive virtual programs designed for Cuba's residents and families—powered by US-trained physicians</p>
+          <p className="text-emerald-400 text-lg mb-12">Exclusive virtual programs designed for global residents and families—powered by US-trained physicians</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { icon: Brain, title: 'Advanced Longevity Science', desc: 'Evidence-based strategies for extending healthspan' },
               { icon: Heart, title: 'Personalized Medicine', desc: 'Customized programs based on genetic and lifestyle factors' },
-              { icon: Activity, title: 'Holistic Approach', desc: 'Integration of fitness, nutrition, stress management, and sleep' },
+              { icon: Activity, title: 'Holistic Approach', desc: 'Integration of fitness, nutrition, mental well-being, and sleep' },
               { icon: Leaf, title: 'Global Standard Care', desc: 'US-trained physicians with international expertise' },
             ].map((item, idx) => (
               <div key={idx} className="group">
@@ -93,89 +93,6 @@ export default function Longevity() {
                     <p className="text-gray-400">{item.desc}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Packages */}
-      <section className="py-20">
-        <div className="container-lg">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Our Programs</h2>
-          <div className="space-y-6">
-            {packages.map((pkg, idx) => (
-              <div key={idx} className="group">
-                <button
-                  onClick={() => setExpandedPackage(expandedPackage === idx ? -1 : idx)}
-                  className="w-full p-8 rounded-lg bg-linear-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 hover:border-emerald-500/60 transition duration-300 text-left group"
-                >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                      <p className="text-gray-400">{pkg.subtitle}</p>
-                    </div>
-                    <ArrowRight size={24} className={`text-emerald-400 shrink-0 transition-transform duration-300 ${expandedPackage === idx ? 'rotate-90' : ''}`} />
-                  </div>
-                </button>
-                
-                {expandedPackage === idx && (
-                  <div className="mt-4 p-8 rounded-lg bg-slate-900/50 border border-emerald-500/20 animate-in fade-in slide-in-from-top-4 duration-300">
-                    <ul className="space-y-4">
-                      {pkg.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-3 text-gray-300">
-                          <CheckCircle size={20} className="text-emerald-400 shrink-0 mt-1" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 bg-slate-900/50">
-        <div className="container-lg">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">Your Longevity Journey</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              { step: 1, title: 'Assessment', desc: 'Comprehensive health and lifestyle evaluation' },
-              { step: 2, title: 'Personalization', desc: 'Custom longevity protocol development' },
-              { step: 3, title: 'Implementation', desc: 'Guided execution and continuous support' },
-              { step: 4, title: 'Optimization', desc: 'Regular monitoring and protocol refinement' },
-            ].map((item) => (
-              <div key={item.step} className="text-center p-6 rounded-lg bg-linear-to-br from-emerald-500/5 to-teal-500/5 border border-emerald-500/20">
-                <div className="text-5xl font-bold text-emerald-400 mb-3">{item.step}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-20">
-        <div className="container-lg">
-          <h2 className="text-4xl font-bold text-white mb-12">Program Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              'Extended healthspan and lifespan',
-              'Reduced risk of chronic diseases',
-              'Enhanced energy and vitality',
-              'Optimized cognitive performance',
-              'Improved metabolic health',
-              'Better sleep and recovery',
-              'Personalized supplementation',
-              'Access to cutting-edge research',
-            ].map((benefit, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-6 rounded-lg bg-slate-900/50 border border-emerald-500/20 hover:border-emerald-500/50 transition">
-                <CheckCircle size={24} className="text-emerald-400 shrink-0" />
-                <span className="text-gray-300 text-lg">{benefit}</span>
               </div>
             ))}
           </div>
@@ -194,7 +111,7 @@ export default function Longevity() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-emerald-500/50 transition duration-300 transform hover:scale-105"
           >
-            Schedule Your Assessment <ArrowRight size={20} />
+            Contact Us <ArrowRight size={20} />
           </a>
         </div>
       </section>

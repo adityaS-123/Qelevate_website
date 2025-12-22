@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Youtube, Heart, Zap } from 'lucide-react';
+import { Instagram, Youtube, Heart } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,14 +16,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <div className="fade-in-up" style={{animationDelay: '0.1s'}}>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-linear-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
-                <Zap size={20} className="text-white" />
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/qelevate_logo.svg" 
+                alt="QElevate" 
+                className="w-12 h-12 object-contain"
+              />
               <h3 className="text-2xl font-bold gradient-text">QElevate</h3>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Healthcare Tech and Research Consultancy focused on improving healthcare delivery and patient outcomes with innovation and expertise.
             </p>
           </div>
 
@@ -77,15 +78,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/contact"
                   className="text-gray-400 hover:text-pink-400 transition-all duration-300 flex items-center gap-2 group"
                 >
                   <span className="w-0 h-0.5 bg-pink-500 group-hover:w-2 transition-all duration-300"></span>
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

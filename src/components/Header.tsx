@@ -47,6 +47,13 @@ export default function Header() {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
+            to="/qsleep"
+            className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 relative group"
+          >
+            QSleep
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link
             to="/longevity"
             className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 relative group"
           >
@@ -60,14 +67,19 @@ export default function Header() {
             About
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
+            className="text-gray-300 hover:text-orange-400 transition-colors duration-300 relative group"
+          >
+            Contact
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link
+            to="/contact"
             className="btn-primary"
           >
             Request Consultation
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -105,6 +117,13 @@ export default function Header() {
               QHealth
             </Link>
             <Link
+              to="/qsleep"
+              className="text-gray-300 hover:text-indigo-400 transition-colors py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              QSleep
+            </Link>
+            <Link
               to="/longevity"
               className="text-gray-300 hover:text-emerald-400 transition-colors py-2"
               onClick={() => setIsOpen(false)}
@@ -118,15 +137,20 @@ export default function Header() {
             >
               About
             </Link>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
+              className="text-gray-300 hover:text-blue-400 transition-colors py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+            <Link
+              to="/contact"
               className="btn-primary inline-block text-center"
               onClick={() => setIsOpen(false)}
             >
               Request Consultation
-            </a>
+            </Link>
           </div>
         </div>
       )}
