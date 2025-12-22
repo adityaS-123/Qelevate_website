@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Heart, Leaf, Activity, Brain } from 'lucide-react';
+import { ArrowRight, Heart, Leaf, Activity, Brain } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Longevity() {
