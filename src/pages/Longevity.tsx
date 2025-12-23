@@ -20,14 +20,12 @@ export default function Longevity() {
             <p className="text-xl text-gray-400 mb-8 leading-relaxed">
               Live longer, healthier, with personalized longevity programs designed for optimal vitality and wellbeing.
             </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-emerald-500/50 transition duration-300 transform hover:scale-105"
             >
               Start Your Longevity Journey <ArrowRight size={20} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -65,14 +63,12 @@ export default function Longevity() {
         <div className="container-lg relative z-10 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Optimize Your Health?</h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">Join our longevity program and invest in your healthiest years ahead</p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-emerald-500 to-teal-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-emerald-500/50 transition duration-300 transform hover:scale-105"
           >
             Contact Us <ArrowRight size={20} />
-          </a>
+          </Link>
         </div>
       </section>
 

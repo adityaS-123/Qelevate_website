@@ -36,7 +36,7 @@ export default function Header() {
             to="/healthcare-professional-consultancy"
             className="text-gray-300 hover:text-blue-400 transition-colors duration-300 relative group"
           >
-            Healthcare
+            Professional Consultancy
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
