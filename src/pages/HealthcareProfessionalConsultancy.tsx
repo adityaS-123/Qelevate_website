@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CheckCircle, Briefcase, TrendingUp, Target, Zap, Brain } from 'lucide-react';
+import { Zap } from 'lucide-react';
 
 export default function HealthcareProfessionalConsultancy() {
   return (
