@@ -15,7 +15,7 @@ export default function About() {
       email: 'contactus@qelevate.org',
     },
     {
-      name: 'Jeffery Shuhaibier, MD MBA',
+      name: 'Jeffery Shuhaiber, MD MBA',
       qualifications: [
         'Surgery, Healthcare, Legal & Entities',
         'Educator and Mentor',
