@@ -10,7 +10,7 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'contactus@qelevate.in',
+    user: 'rohit.sharma@qelevate.in',
     pass: 'jjai yshc sctn suhb',
   },
 });
@@ -27,8 +27,8 @@ app.post('/api/send-email', async (req, res) => {
 
     // Email to admin
     const adminMailOptions = {
-      from: 'contactus@qelevate.in',
-      to: 'contactus@qelevate.in',
+      from: 'rohit.sharma@qelevate.in',
+      to: 'rohit.sharma@qelevate.in',
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -43,7 +43,7 @@ app.post('/api/send-email', async (req, res) => {
 
     // Confirmation email to user
     const userMailOptions = {
-      from: 'contactus@qelevate.in',
+      from: 'rohit.sharma@qelevate.in',
       to: email,
       subject: 'We received your message - QElevate',
       html: `
