@@ -30,7 +30,7 @@ export default async function handler(
     // Email to admin
     const adminMailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'aditya.sharma@qelevate.org',
+      to: 'contactus@qelevate.in',
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
