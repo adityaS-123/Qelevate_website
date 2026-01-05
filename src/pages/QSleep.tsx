@@ -65,7 +65,7 @@ export default function QSleep() {
               
               {/* About */}
               <div>
-                <h3 className="text-3xl font-bold text-white mb-2">Dr. Prashant Kumar Singh</h3>
+                <h3 className="text-3xl font-bold text-white mb-2">Dr. Prashant Kumar Singh, MD</h3>
                 <p className="text-xl text-indigo-400 font-semibold mb-6">Attending Physician/Consultant</p>
                 <div className="space-y-4 mb-8">
                   <p className="text-gray-300 flex items-start gap-3">

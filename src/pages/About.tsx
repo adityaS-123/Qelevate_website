@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Linkedin, Mail } from 'lucide-react';
 
 export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const teamMembers = [
     {
       name: 'Rohit Sharma, MD M.Sc',
