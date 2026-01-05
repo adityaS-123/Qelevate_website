@@ -51,8 +51,8 @@ export default function QSleep() {
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-transparent to-cyan-500/5"></div>
         <div className="container-lg relative z-10">
           <h2 className="text-4xl font-bold text-white mb-16 text-center">Meet Your Sleep Medicine Physician</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
               {/* Photo */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/30 to-cyan-500/30 rounded-xl blur-xl group-hover:blur-2xl transition duration-300"></div>
