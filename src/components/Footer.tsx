@@ -43,33 +43,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/healthcare-professional-consultancy"
-                  className="text-gray-400 hover:text-purple-400 transition-all duration-300 flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-0.5 bg-purple-500 group-hover:w-2 transition-all duration-300"></span>
-                  Healthcare
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/qhealth"
-                  className="text-gray-400 hover:text-cyan-400 transition-all duration-300 flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-0.5 bg-cyan-500 group-hover:w-2 transition-all duration-300"></span>
-                  QHealth
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/longevity"
-                  className="text-gray-400 hover:text-emerald-400 transition-all duration-300 flex items-center gap-2 group"
-                >
-                  <span className="w-0 h-0.5 bg-emerald-500 group-hover:w-2 transition-all duration-300"></span>
-                  Longevity
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/about"
                   className="text-gray-400 hover:text-pink-400 transition-all duration-300 flex items-center gap-2 group"
                 >

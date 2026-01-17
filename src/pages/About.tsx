@@ -17,7 +17,7 @@ export default function About() {
       ],
       image: '/rohit_about.jpg',
       linkedin: 'https://www.linkedin.com/in/rohit8692/',
-      email: 'contactus@qelevate.org',
+      email: 'contactus@qelevate.in',
     },
     {
       name: 'Jeffery Shuhaiber, MD MBA',
@@ -28,7 +28,7 @@ export default function About() {
       ],
       image: '/jeffery_about.jpg',
       linkedin: 'https://www.linkedin.com/in/jeffrey-shuhaiber-48877451/',
-      email: 'contactus@qelevate.org',
+      email: 'contactus@qelevate.in',
     },
   ];
 

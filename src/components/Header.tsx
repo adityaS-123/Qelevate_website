@@ -33,34 +33,6 @@ export default function Header() {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
-            to="/healthcare-professional-consultancy"
-            className="text-gray-300 hover:text-blue-400 transition-colors duration-300 relative group"
-          >
-            Professional Consultancy
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/qhealth"
-            className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 relative group"
-          >
-            QHealth
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/qsleep"
-            className="text-gray-300 hover:text-indigo-400 transition-colors duration-300 relative group"
-          >
-            QSleep
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-indigo-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/longevity"
-            className="text-gray-300 hover:text-emerald-400 transition-colors duration-300 relative group"
-          >
-            Longevity
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
             to="/about"
             className="text-gray-300 hover:text-pink-400 transition-colors duration-300 relative group"
           >
@@ -71,14 +43,8 @@ export default function Header() {
             to="/contact"
             className="text-gray-300 hover:text-orange-400 transition-colors duration-300 relative group"
           >
-            Contact
+            Contact Us
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/contact"
-            className="btn-primary"
-          >
-            Request Consultation
           </Link>
         </div>
 
@@ -103,34 +69,6 @@ export default function Header() {
               Home
             </Link>
             <Link
-              to="/healthcare-professional-consultancy"
-              className="text-gray-300 hover:text-blue-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Healthcare Consultancy
-            </Link>
-            <Link
-              to="/qhealth"
-              className="text-gray-300 hover:text-cyan-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              QHealth
-            </Link>
-            <Link
-              to="/qsleep"
-              className="text-gray-300 hover:text-indigo-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              QSleep
-            </Link>
-            <Link
-              to="/longevity"
-              className="text-gray-300 hover:text-emerald-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Longevity
-            </Link>
-            <Link
               to="/about"
               className="text-gray-300 hover:text-pink-400 transition-colors py-2"
               onClick={() => setIsOpen(false)}
@@ -143,13 +81,6 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
             >
               Contact
-            </Link>
-            <Link
-              to="/contact"
-              className="btn-primary inline-block text-center"
-              onClick={() => setIsOpen(false)}
-            >
-              Request Consultation
             </Link>
           </div>
         </div>
