@@ -60,6 +60,8 @@ const foundingTeam: TeamMember[] = [
     title: 'Clinical Informatics · Founding Team',
     credentials: '',
     image: '/noah_about.jpg',
+    linkedin: 'https://www.linkedin.com/in/noah-bastola-2b86487a/',
+    email: 'bastolanoah@gmail.com',
   },
 ];
 
