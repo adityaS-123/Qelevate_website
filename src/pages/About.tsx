@@ -1,133 +1,199 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
+import FadeUp from '../components/FadeUp';
+
+interface TeamMember {
+  name: string;
+  title: string;
+  credentials: string;
+  image: string;
+  linkedin?: string;
+  email?: string;
+}
+
+const leadershipMembers: TeamMember[] = [
+  {
+    name: 'Rohit Sharma, MD M.Sc',
+    title: 'Co-Founder',
+    credentials: 'Internal Medicine & Health Informatics · American Board Certified in Internal Medicine · Educator and Mentor',
+    image: '/rohit_about.jpg',
+    linkedin: 'https://www.linkedin.com/in/rohit8692/',
+    email: 'contactus@qelevate.in',
+  },
+  {
+    name: 'Jeffery Shuhaiber, MD MBA',
+    title: 'Co-Founder',
+    credentials: 'Cardiothoracic Surgery · American Board Certified · Healthcare, Legal & Entities · Educator and Mentor',
+    image: '/jeffery_about.jpg',
+    linkedin: 'https://www.linkedin.com/in/jeffrey-shuhaiber-48877451/',
+    email: 'contactus@qelevate.in',
+  },
+  {
+    name: 'Brendan Gallagher',
+    title: 'CTO',
+    credentials: '',
+    image: '/brendan_about.jpeg',
+    linkedin: 'https://www.linkedin.com/in/brendankgallagher/',
+    email: 'bgallagher1016@gmail.com',
+  },
+];
+
+const foundingTeam: TeamMember[] = [
+  {
+    name: 'Bianca Arriza Carlo',
+    title: 'Head of Product',
+    credentials: '',
+    image: '/bianca_about.jpg',
+    linkedin: 'https://www.linkedin.com/in/bianca-arraiza-carlo-b7b443315/',
+    email: 'biancaarraizacarlo@college.harvard.edu',
+  },
+  {
+    name: 'Trevor Kerxhalli',
+    title: 'Founding Software Engineer',
+    credentials: '',
+    image: '/trevor_about.jpg',
+    linkedin: 'https://www.linkedin.com/in/trevor-kerxhalli-48815b2a7/',
+    email: 'trevorkerxhalli@gmail.com',
+  },
+  {
+    name: 'Noah Bastola',
+    title: 'Clinical Informatics · Founding Team',
+    credentials: '',
+    image: '/noah_about.jpg',
+  },
+];
+
+function SectionLabel({ text, className = '' }: { text: string; className?: string }) {
+  return (
+    <div className="flex items-center justify-center gap-4 mb-8">
+      <div className="section-line w-10 h-px bg-blue-600 dark:bg-blue-500 shrink-0" />
+      <span className={`text-blue-600 dark:text-blue-500 font-semibold tracking-widest uppercase ${className || 'text-xs'}`}>{text}</span>
+      <div className="section-line w-10 h-px bg-blue-600 dark:bg-blue-500 shrink-0" />
+    </div>
+  );
+}
+
+function SocialLinks({ member }: { member: TeamMember }) {
+  if (!member.linkedin && !member.email) return null;
+  return (
+    <div className="flex gap-2">
+      {member.linkedin && (
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${member.name} on LinkedIn`}
+          className="p-2 rounded-md border border-gray-200 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 hover:border-gray-300 dark:hover:border-gray-700 transition-colors duration-200"
+        >
+          <Linkedin size={15} />
+        </a>
+      )}
+      {member.email && (
+        <a
+          href={`mailto:${member.email}`}
+          aria-label={`Email ${member.name}`}
+          className="p-2 rounded-md border border-gray-200 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 hover:border-gray-300 dark:hover:border-gray-700 transition-colors duration-200"
+        >
+          <Mail size={15} />
+        </a>
+      )}
+    </div>
+  );
+}
 
 export default function About() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const teamMembers = [
-    {
-      name: 'Rohit Sharma, MD M.Sc',
-      qualifications: [
-        'Internal Medicine & Health Informatics',
-        'Educator and Mentor',
-        'American Board Certified in Internal Medicine',
-      ],
-      image: '/rohit_about.jpg',
-      linkedin: 'https://www.linkedin.com/in/rohit8692/',
-      email: 'contactus@qelevate.in',
-    },
-    {
-      name: 'Jeffery Shuhaiber, MD MBA',
-      qualifications: [
-        'Surgery, Healthcare, Legal & Entities',
-        'Educator and Mentor',
-        'American Board Certified in Cardiothoracic Surgery',
-      ],
-      image: '/jeffery_about.jpg',
-      linkedin: 'https://www.linkedin.com/in/jeffrey-shuhaiber-48877451/',
-      email: 'contactus@qelevate.in',
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950">
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="container-lg">
-          <h2 className="text-4xl font-bold text-white mb-4 text-center">Our Team</h2>
-          <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-            Led by internationally trained physicians and healthcare innovators
-          </p>
+    <div className="min-h-screen">
 
-          <div className="flex justify-center">
-            <div className="w-full max-w-4xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
-                {teamMembers.map((member, idx) => (
-                  <div key={idx} className="group text-center flex flex-col h-full">
-                    <div className="mb-8 overflow-hidden rounded-xl h-80 md:h-96 bg-linear-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/30 flex items-center justify-center transform transition hover:scale-105 duration-300">
-                      <img 
-                        src={member.image} 
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                   
-                    <ul className="space-y-2 mb-6 grow">
-                      {member.qualifications.map((qual, qIdx) => (
-                        <li key={qIdx} className="text-gray-400 text-sm">
-                          {qual}
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex justify-center gap-4 pt-4">
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/60 transition text-pink-400 hover:text-pink-300">
-                        <Linkedin size={20} />
-                      </a>
-                      <a href={`mailto:${member.email}`} className="p-3 rounded-lg bg-pink-500/10 border border-pink-500/30 hover:border-pink-500/60 transition text-pink-400 hover:text-pink-300">
-                        <Mail size={20} />
-                      </a>
-                    </div>
+      {/* Company Overview */}
+      <section className="py-28 border-b border-gray-200 dark:border-gray-800/60">
+        <div className="container-lg">
+          <FadeUp className="max-w-2xl mx-auto text-center">
+            <SectionLabel text="About" className="text-2xl md:text-3xl font-bold tracking-wide" />
+            <p className="text-gray-900 dark:text-white text-xl leading-relaxed">
+              We are a mission driven team working to build the foundational systems that can transform how health data is created, held, and used for the benefit of patients, clinicians, and the communities they serve.
+            </p>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* Leadership & Team */}
+      <section className="py-28 border-b border-gray-200 dark:border-gray-800/60">
+        <div className="container-lg">
+
+          {/* Section heading */}
+          <FadeUp className="mb-14 text-center">
+            <SectionLabel text="Our Team" className="text-2xl md:text-3xl font-bold tracking-wide" />
+          </FadeUp>
+
+          {/* Leadership row — larger portrait cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto mb-6">
+            {leadershipMembers.map((member, idx) => (
+              <FadeUp key={member.name} delay={idx * 80} className="h-full">
+                <div className="team-card h-full flex flex-col rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-slate-900/30">
+                  <div className="aspect-3/4 overflow-hidden bg-gray-100 dark:bg-slate-800">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="team-card-img w-full h-full object-cover object-top"
+                    />
                   </div>
-                ))}
-              </div>
-            </div>
+                  <div className="p-6 flex flex-col grow">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-0.5">{member.name}</h3>
+                    <p className="text-blue-600 dark:text-blue-500 text-sm font-medium mb-3">{member.title}</p>
+                    {member.credentials ? (
+                      <p className="text-gray-500 text-sm leading-relaxed mb-6 grow">{member.credentials}</p>
+                    ) : (
+                      <div className="grow" />
+                    )}
+                    <SocialLinks member={member} />
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Mission Section */}
-      <section className="py-20 bg-slate-900/50 border-y border-pink-500/10">
-        <div className="container-lg">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-8">Our Mission</h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              QElevate is dedicated to empowering healthcare and healthcare-related professionals at all levels by providing personalized consultation for both organizations and individuals such as career guidance, growth, and management support, and tools to optimize revenue, performance, and overall professional development.
-            </p>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              Through tailored consultation and self-empowerment strategies, we aim to foster resilience, encourage critical thinking, and drive organizational effectiveness focused on India and worldwide.
-            </p>
+          {/* Divider between tiers */}
+          <FadeUp delay={leadershipMembers.length * 80} className="max-w-5xl mx-auto mb-6">
+            <div className="w-full h-px bg-gray-100 dark:bg-gray-800/60" />
+          </FadeUp>
+
+          {/* Founding team row — compact square cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {foundingTeam.map((member, idx) => (
+              <FadeUp key={member.name} delay={(leadershipMembers.length + 1 + idx) * 80} className="h-full">
+                <div className="team-card h-full flex flex-col rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800/80 bg-white dark:bg-slate-900/30">
+                  <div className="aspect-square overflow-hidden bg-gray-100 dark:bg-slate-800">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="team-card-img w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="p-4 flex flex-col grow">
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-0.5">{member.name}</h3>
+                    <p className="text-blue-600 dark:text-blue-500 text-xs font-medium mb-3">{member.title}</p>
+                    <div className="grow" />
+                    <SocialLinks member={member} />
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Vision Section */}
-      <section className="py-20">
-        <div className="container-lg">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-8">Our Vision</h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              To be a transformative force in the healthcare industry for both at the personal and organizational level. QElevate empowers allied health care and medical professionals to excel individually, and collectively, by fostering collaboration to contribute and add value. The vision is to create a community of empowered individuals, government, and private hospitals that align on a mission to achieve meaningful collaboration to contribute and add value-the vision is to create a community of empowered individuals, government, and private hospitals sharing the future of sustainable and cost-effective healthcare globally.
+          <FadeUp delay={(leadershipMembers.length + foundingTeam.length + 1) * 80}>
+            <p className="text-gray-400 dark:text-gray-700 text-sm mt-12 text-center">
+              Additional team members and advisors to be announced.
             </p>
-          </div>
+          </FadeUp>
+
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-pink-500/10 via-transparent to-purple-500/10"></div>
-        <div className="container-lg relative z-10 text-center">
-          
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfGZ4PHR0S6buUAqsqXIpUVtqnPk5D5cNbiYiG9jNLkqdyD0w/viewform?usp=header"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-pink-500/50 transition duration-300 transform hover:scale-105"
-          >
-            Contact Us <ArrowRight size={20} />
-          </a>
-        </div>
-      </section>
-
-      {/* Navigation */}
-      <section className="py-8 text-center border-t border-pink-500/10">
-        <Link to="/" className="text-pink-400 hover:text-pink-300 font-semibold flex items-center justify-center gap-2 transition">
-          ← Back to Home
-        </Link>
-      </section>
     </div>
   );
 }

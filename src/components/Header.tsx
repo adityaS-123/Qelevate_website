@@ -1,87 +1,85 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
+
+const navLinks = [
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
+];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-gray-950/40 border-b border-gray-800/50">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800/80">
+      {/* Subtle accent line */}
+      <div className="h-px bg-linear-to-r from-transparent via-blue-600/20 to-transparent dark:via-blue-600/50" />
+
       <nav className="container-lg flex justify-between items-center py-4">
-        {/* Logo with animation */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative">
-            <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg blur-lg opacity-75 group-hover:opacity-100 transition-opacity"></div>
-            <div className="relative bg-gray-950 px-4 py-2 rounded-lg flex items-center gap-3">
-              <img 
-                src="/qelevate_logo.svg" 
-                alt="QElevate" 
-                className="w-20 h-17 object-contain"
-              />
-              <span className="text-2xl font-bold gradient-text"></span>
-            </div>
-          </div>
+        <Link to="/" className="flex items-center gap-2.5">
+          <img
+            src="/qelevate_logo.svg"
+            alt=""
+            className="h-9 w-auto object-contain"
+          />
+          <span className="text-gray-900 dark:text-white font-semibold text-base tracking-tight">QElevate</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8 items-center">
-          <Link
-            to="/home"
-            className="text-gray-300 hover:text-blue-400 transition-colors duration-300 relative group"
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 text-sm font-medium tracking-wide transition-colors duration-200"
+            >
+              {label}
+            </Link>
+          ))}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            suppressHydrationWarning
+            className="text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-200 transition-colors duration-200 p-1 rounded-md"
           >
-            Home
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/about"
-            className="text-gray-300 hover:text-pink-400 transition-colors duration-300 relative group"
-          >
-            About
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/contact"
-            className="text-gray-300 hover:text-orange-400 transition-colors duration-300 relative group"
-          >
-            Contact Us
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-300 hover:text-blue-400 transition-colors"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            suppressHydrationWarning
+            className="text-gray-400 hover:text-gray-700 dark:text-gray-500 dark:hover:text-gray-200 transition-colors duration-200 p-1 rounded-md"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors duration-200"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden glass border-t border-gray-800/50 animate-in fade-in slide-in-from-top-2 duration-300">
-          <div className="container-lg flex flex-col gap-4 py-4">
-            <Link
-              to="/home"
-              className="text-gray-300 hover:text-blue-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-300 hover:text-pink-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-300 hover:text-blue-400 transition-colors py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
+        <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-slate-950">
+          <div className="container-lg flex flex-col py-5 gap-1">
+            {navLinks.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className="text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 text-sm font-medium py-2.5 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       )}
